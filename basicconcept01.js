@@ -144,3 +144,44 @@ let con_LoggedIn = Boolean(loggedIn)
 console.log(con_LoggedIn) // true
 
  
+
+
+
+
+
+//<----------- Comparsion Operators---------->
+
+// if operands are different Js try to convert them into numbers
+// Any comparison with NaN is  false
+// == check values only
+// === check values + types
+
+console.log("****  Comparsion Operators ****")
+// comparsion and equality check works differentialy
+// comparsion converts null to a number like null t0 0 
+// equality chcek == does not convert null to 0 , unless it compared with undefined
+
+console.log("5" == 5)  // true   => type conversion happens ( convert "5" o 5 ) 
+console.log("5" === 5)  // false
+
+
+console.log( null == undefined)  // true
+console.log( null === undefined) // false (type check null=>object & undefined=>undefined)
+
+console.log(NaN == NaN)  //false
+console.log(NaN === NaN)  //false
+
+console.log("10" > 2)    // true  => convert sting to a number
+console.log( "5" > 10 )    // false
+console.log( "60" > "5" )   // false
+console.log( "60" > "5" )   // true => when both strings it compares character by character  6  >  5 (true)
+console.log( "10" > "5" )   // false (1>5) false 
+console.log("accept" > 5) //false  =>  accpet is not a number   so , when Js tries to convert it  becomes NaN
+console.log(null > 0)   // false
+console.log(null < 0)   // false
+console.log(null === 0) // false
+console.log(null >=0 ) // true
+console.log(undefined == 0) // false
+
+
+
