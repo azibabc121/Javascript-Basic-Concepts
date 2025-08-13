@@ -92,3 +92,55 @@ myfunction()
     console.log(bestfood)
 
   }
+
+
+
+
+
+
+
+  // // <-------- Data Type Conversions ------->
+  
+// Two types of conversions
+//1-Implicit (operationla Based)
+//2-explicit
+  
+// " - "  operation always try to do numeric operation , so javascript try to convert string to a number and perform subtraction
+// Except " + "  factor favous string concatenation if either side side is string
+
+console.log("5"+ 1)    // "51" string concatenation
+console.log("5"- 1)    //4
+console.log("5" - "7")  // -2
+console.log("5" * 3)   //15
+console.log(true + 1)  //1 
+console.log("hello" + false )  // "hellofalse"
+
+console.log(1 + 2 + "4") // js evaluates expression from left to right 
+// 1+2  => 3
+//3 + "4" => "34"     implicit conversion , so 1 + 2 + "4" = "32"
+
+let sum1 = null
+console.log(typeof sum1)  // object
+
+
+let sumValue = "123"
+let con_sumValue = Number(sumValue)
+console.log(con_sumValue);  // print 123 , when sumvalue = "123" 
+console.log(con_sumValue);  //NaN
+ 
+console.log(typeof con_sumValue);  // number
+
+let word = "Drink"
+let convertedWord = Number(word)
+console.log(convertedWord)      // NaN
+
+// 1 => true
+// 0 => false
+// "" =>false
+// "Aiman" => true
+
+let loggedIn = "Aiman"
+let con_LoggedIn = Boolean(loggedIn)
+console.log(con_LoggedIn) // true
+
+ 
