@@ -185,3 +185,30 @@ console.log(undefined == 0) // false
 
 
 
+
+// <-------------------------Array's Concept--------------------------------->
+
+console.log("<----Array's Concept----->")
+
+// 1-shallow Copy (copy By value it just copies the Exact Value)
+// 2-Deep Copy (Copy by reference and in that it points to the same place in the memory)
+
+// slice and splice method in Array
+
+
+const orignal = {
+  name : "Umar",
+  marks :{
+    math: 80
+  }
+}
+
+//const  shallowCopy =  orignal
+const shallowCopy = {...orignal}  // we do shallow copy using spread operator
+
+shallowCopy.name = "Ahmad"
+shallowCopy.marks.math = 90
+console.log(shallowCopy.name)
+console.log(shallowCopy.marks.math)
+console.log(orignal.name)
+console.log(orignal.marks.math)
