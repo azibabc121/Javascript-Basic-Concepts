@@ -74,3 +74,21 @@ function greet(){
  }
 
 myfunction()
+
+
+
+   // <----------Temporal dead Zone (TDZ) concept ------------>:
+  // The time period between
+  // variable hoisted ---------- to -------actually declared in the code
+  
+  {
+    // TDZ start here
+    // TDZ coninues here 
+    // TDZ coninues here 
+    // console.log(bestfood)  ReferenceError: Cannot access 'bestfood' before initialization  ---> TDZ continues here
+    let bestfood ;  // TDZ end here
+    console.log(bestfood)
+    bestfood = "golgappy"
+    console.log(bestfood)
+
+  }
