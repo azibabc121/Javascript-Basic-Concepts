@@ -1,5 +1,5 @@
 console.log("<-----------Object's Concept---------->")
-// Object is a collection of key, pair values
+
 
 // There are two way's to declare an object
 //1 - Object created from constructor is singleton bject 
