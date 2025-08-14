@@ -80,3 +80,20 @@ const calculator ={
 calculator.add(3,5)
 calculator.subtract(4,6)
 
+
+
+
+//<------------------- SetTimeOut and SetInterval Concept------------>
+
+
+//Syntax
+// SetTimeout(function , timeInterval)
+ 
+  const sum = (a,b)=>{
+    console.log("sum of a and b " + (a+b))
+    
+  }
+   
+  setTimeout(sum, 1000 , 1, 2)
+
+ 
