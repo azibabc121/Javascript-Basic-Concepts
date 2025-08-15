@@ -28,3 +28,31 @@ const averageScores = students.map(student => {
 console.log(averageScores);
 // [{ name: 'Ali', average: 90 }, { name: 'Zara', average: 83.33333333333333 }]
 
+
+
+
+
+//<----------------- Filter Function in jaavscript------------->
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+console.log(evenNumbers); // [2, 4, 6]
+
+const words = ['apple', 'banana', 'fig', 'strawberry'];
+
+const longWords = words.filter(word => word.length > 5);
+
+console.log(longWords); // ['banana', 'strawberry']
+
+
+const users = [
+  { id: 1, name: "Ali", active: true },
+  { id: 2, name: "Sara", active: false },
+  { id: 3, name: "Ahmed", active: true }
+];
+
+const activeUsers = users.filter(user => user.active);
+
+console.log(activeUsers);
