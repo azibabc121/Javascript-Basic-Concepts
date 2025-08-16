@@ -57,3 +57,29 @@ console.log(user.getName()); // Aiman
 
 
 
+
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+
+console.log(sum); // Output: 15
+
+
+const nested = [[1, 2], [3, 4], [5]];
+
+const flat = nested.reduce((acc, curr) => acc.concat(curr), []);
+
+console.log(flat); // Output: [1, 2, 3, 4, 5]
+
+
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const count = fruits.reduce((acc, fruit) => {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(count);
+// Output: { apple: 3, banana: 2, orange: 1 }
+
+
