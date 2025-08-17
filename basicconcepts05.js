@@ -83,3 +83,20 @@ console.log(count);
 // Output: { apple: 3, banana: 2, orange: 1 }
 
 
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+
+function sum(...nums) {
+  return nums.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+
+
+function sum(...nums) {
+  return nums.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+
