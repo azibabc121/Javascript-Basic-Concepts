@@ -57,3 +57,28 @@ try {
     console.log("\nError when using arrow function as constructor:", error.message);
 }
 
+
+// Before refactor
+function createCard(id, value) {
+  return {
+    id: id,
+    value: value,
+    isFlipped: false,
+  };
+}
+
+// After refactor with shorthand + computed property names
+function createCard(id, valueKey) {
+  return {
+    id,                  // object shorthand
+    [valueKey]: true,    // computed property name
+    isFlipped: false,
+  };
+}
+
+// Usage
+const card = createCard(1, "matched");
+console.log(card);
+// { id: 1, matched: true, isFlipped: false }
+
+
