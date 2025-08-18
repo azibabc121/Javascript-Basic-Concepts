@@ -13,3 +13,47 @@ const arr1 = [1, 2, 3];
 const arr2 = [4, 5];
 const combined = [...arr1, ...arr2];
 console.log(combined); // [1, 2, 3, 4, 5]
+
+
+
+function normalFunction(a, b) {
+    return a + b;
+}
+
+const arrowFunction = (a, b) => a + b;
+
+console.log("Normal Function (2+3):", normalFunction(2, 3));
+console.log("Arrow Function (2+3):", arrowFunction(2, 3));
+
+const square = x => x * x;
+console.log("Square of 4:", square(4));
+
+const person = {
+    name: "Alice",
+    hobbies: ["Reading", "Coding", "Music"],
+
+    showHobbiesNormal: function() {
+        console.log("\nNormal Function Example:");
+        this.hobbies.forEach(function(hobby) {
+            console.log(this.name, "likes", hobby);
+        });
+    },
+
+    showHobbiesArrow: function() {
+        console.log("\nArrow Function Example:");
+        this.hobbies.forEach(hobby => {
+            console.log(this.name, "likes", hobby);
+        });
+    }
+};
+
+person.showHobbiesNormal();
+person.showHobbiesArrow();
+
+try {
+    const Arrow = () => {};
+    const obj = new Arrow();
+} catch (error) {
+    console.log("\nError when using arrow function as constructor:", error.message);
+}
+
