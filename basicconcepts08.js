@@ -128,53 +128,53 @@ const Auditable = Base =>
     }
   };
 
-// class SecureRectangle extends Auditable(Rectangle) {}
-// class SecureCircle extends Auditable(Circle) {}
+class SecureRectangle extends Auditable(Rectangle) {}
+class SecureCircle extends Auditable(Circle) {}
 
-// // --- Usage / Demo ---
+// --- Usage / Demo ---
 
-// try {
-//   // const s = new Shape("oops"); // will throw
-// } catch (e) {
-//   console.log("Abstract instantiation error:", e.message);
-// }
+try {
+  // const s = new Shape("oops"); // will throw
+} catch (e) {
+  console.log("Abstract instantiation error:", e.message);
+}
 
-// const r = new SecureRectangle(10, 5);
-// const c = new SecureCircle(7);
+const r = new SecureRectangle(10, 5);
+const c = new SecureCircle(7);
 
-// r.setAuditTag("rect-001");
-// c.setAuditTag("circle-001");
+r.setAuditTag("rect-001");
+c.setAuditTag("circle-001");
 
-// console.log(r.describe()); // Rectangle details with area
-// console.log(c.describe()); // Circle details with area
+console.log(r.describe()); // Rectangle details with area
+console.log(c.describe()); // Circle details with area
 
-// console.log("Rectangle area:", r.area());
-// console.log("Circle area:", c.area());
+console.log("Rectangle area:", r.area());
+console.log("Circle area:", c.area());
 
-// console.log("Compare area (r vs c):", Shape.compareArea(r, c)); // negative if r < c
+console.log("Compare area (r vs c):", Shape.compareArea(r, c)); // negative if r < c
 
-// // Test setters/getters & validation
-// r.width = 12;
-// r.height = 6;
-// console.log("Updated rectangle area:", r.area());
+// Test setters/getters & validation
+r.width = 12;
+r.height = 6;
+console.log("Updated rectangle area:", r.area());
 
-// // Polymorphism in action
-// const shapes = [r, c, new Circle(2), new Rectangle(3, 3)];
-// shapes.sort(Shape.compareArea); // uses the same static compare on different subclasses
-// console.log("\nSorted by area (small -> large):");
-// shapes.forEach(s => console.log(s.describe()));
+// Polymorphism in action
+const shapes = [r, c, new Circle(2), new Rectangle(3, 3)];
+shapes.sort(Shape.compareArea); // uses the same static compare on different subclasses
+console.log("\nSorted by area (small -> large):");
+shapes.forEach(s => console.log(s.describe()));
 
-// // Employee/Manager demo
-// const e = new Employee("Alice");
-// const m = new Manager("Bob", 4);
-// const m2 = Manager.fromEmployee(e, 2);
+// Employee/Manager demo
+const e = new Employee("Alice");
+const m = new Manager("Bob", 4);
+const m2 = Manager.fromEmployee(e, 2);
 
-// console.log("\nPeople:");
-// console.log(e.info());
-// console.log(m.info());
-// console.log(m2.info());
+console.log("\nPeople:");
+console.log(e.info());
+console.log(m.info());
+console.log(m2.info());
 
-// // Audit tags
-// console.log("\nAudit tags:");
-// console.log("SecureRectangle tag:", r.getAuditTag());
-// console.log("SecureCircle tag:", c.getAuditTag());
+// Audit tags
+console.log("\nAudit tags:");
+console.log("SecureRectangle tag:", r.getAuditTag());
+console.log("SecureCircle tag:", c.getAuditTag());
