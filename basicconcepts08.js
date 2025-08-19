@@ -91,42 +91,42 @@ class Circle extends Shape {
   }
 }
 
-// // --- Another simple inheritance chain ---
+// --- Another simple inheritance chain ---
 
-// class Employee {
-//   constructor(name) {
-//     this.name = name;
-//   }
-//   info() {
-//     return `Employee: ${this.name}`;
-//   }
-// }
+class Employee {
+  constructor(name) {
+    this.name = name;
+  }
+  info() {
+    return `Employee: ${this.name}`;
+  }
+}
 
-// class Manager extends Employee {
-//   constructor(name, teamSize = 0) {
-//     super(name);
-//     this.teamSize = teamSize;
-//   }
-//   // override
-//   info() {
-//     return `Manager: ${this.name} (team: ${this.teamSize})`;
-//   }
-//   // static factory
-//   static fromEmployee(emp, teamSize = 0) {
-//     return new Manager(emp.name, teamSize);
-//   }
-// }
+class Manager extends Employee {
+  constructor(name, teamSize = 0) {
+    super(name);
+    this.teamSize = teamSize;
+  }
+  // override
+  info() {
+    return `Manager: ${this.name} (team: ${this.teamSize})`;
+  }
+  // static factory
+  static fromEmployee(emp, teamSize = 0) {
+    return new Manager(emp.name, teamSize);
+  }
+}
 
-// // --- Mix-in style helper (optional pattern) ---
-// const Auditable = Base =>
-//   class extends Base {
-//     setAuditTag(tag) {
-//       this.auditTag = tag;
-//     }
-//     getAuditTag() {
-//       return this.auditTag ?? "N/A";
-//     }
-//   };
+// --- Mix-in style helper (optional pattern) ---
+const Auditable = Base =>
+  class extends Base {
+    setAuditTag(tag) {
+      this.auditTag = tag;
+    }
+    getAuditTag() {
+      return this.auditTag ?? "N/A";
+    }
+  };
 
 // class SecureRectangle extends Auditable(Rectangle) {}
 // class SecureCircle extends Auditable(Circle) {}
