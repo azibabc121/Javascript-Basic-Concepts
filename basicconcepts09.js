@@ -42,3 +42,42 @@ console.log(alice.greet());         // from Person
 console.log(alice.code());          // from CanCode
 console.log(alice.design());        // from CanDesign
 console.log(alice.showSkills());    // from DeveloperDesigner
+
+
+
+
+
+// --- New Concept: Debounce Function ---
+
+// debounce utility
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+// Example usage: simulate a search input
+function searchQuery(query) {
+  console.log("Searching for:", query);
+}
+
+// Wrap searchQuery with debounce (wait 500ms after typing stops)
+const debouncedSearch = debounce(searchQuery, 500);
+
+// Simulate user typing
+debouncedSearch("J");
+debouncedSearch("Ja");
+debouncedSearch("Jav");
+debouncedSearch("Java");
+debouncedSearch("JavaS");
+debouncedSearch("JavaSc");
+debouncedSearch("JavaScr");
+debouncedSearch("JavaScrip");
+debouncedSearch("JavaScript");
+
+// Only the last call ("JavaScript") will actually trigger searchQuery 
+// after 500ms pause.
