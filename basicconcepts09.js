@@ -81,3 +81,56 @@ debouncedSearch("JavaScript");
 
 // Only the last call ("JavaScript") will actually trigger searchQuery 
 // after 500ms pause.
+
+
+
+
+
+// --- New Concept: Static Methods and Properties in Classes ---
+
+class MathUtil {
+  // static property
+  static PI = 3.14159;
+
+  // static method
+  static add(a, b) {
+    return a + b;
+  }
+
+  static multiply(a, b) {
+    return a * b;
+  }
+}
+
+class Counter {
+  // static property shared by all instances
+  static count = 0;
+
+  constructor() {
+    // increment static counter whenever a new instance is created
+    Counter.count++;
+  }
+
+  // static method to get count
+  static getCount() {
+    return Counter.count;
+  }
+}
+
+// --- Usage ---
+
+// MathUtil: access without creating an instance
+console.log("MathUtil.PI:", MathUtil.PI);
+console.log("Add (2+3):", MathUtil.add(2, 3));
+console.log("Multiply (4*5):", MathUtil.multiply(4, 5));
+
+// Counter: track how many objects created
+const c1 = new Counter();
+const c2 = new Counter();
+const c3 = new Counter();
+
+console.log("Number of Counter instances:", Counter.getCount());
+
+// trying to access static property from instance
+console.log("Accessing static from instance (c1.count):", c1.count); // undefined
+console.log("Accessing static properly:", Counter.count);
