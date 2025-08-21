@@ -47,3 +47,23 @@ console.log(account.getBalance());
 
 
 
+// Event Loop and Concurrency Model in JavaScript
+
+console.log("Start");
+
+// Macro-task: setTimeout
+setTimeout(() => {
+  console.log("setTimeout callback (Macro-task)");
+}, 0);
+
+// Micro-task: Promise
+Promise.resolve().then(() => {
+  console.log("Promise.then callback (Micro-task)");
+});
+
+// Normal synchronous code
+for (let i = 0; i < 3; i++) {
+  console.log("Loop iteration:", i);
+}
+
+console.log("End");
