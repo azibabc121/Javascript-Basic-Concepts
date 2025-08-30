@@ -106,3 +106,41 @@ const curriedMultiply = curry(multiply);
 
 console.log("Curried Multiply:", curriedMultiply(2)(3)(4));
 console.log("Partial Application:", curriedMultiply(2, 3)(4));
+
+
+
+
+
+
+
+
+
+
+// memoization.js
+
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    const key = JSON.stringify(args);
+    if (cache[key]) {
+      console.log("Fetching from cache:", key);
+      return cache[key];
+    }
+    console.log("Calculating result for:", key);
+    const result = fn(...args);
+    cache[key] = result;
+    return result;
+  };
+}
+
+// Example: Expensive calculation (factorial)
+function factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+
+const memoizedFactorial = memoize(factorial);
+
+console.log(memoizedFactorial(5)); // calculated
+console.log(memoizedFactorial(5)); // cached
+console.log(memoizedFactorial(6)); // new calculation
