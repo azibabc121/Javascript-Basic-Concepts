@@ -176,3 +176,35 @@ const counter = infiniteCounter();
 console.log(counter.next().value); // 0
 console.log(counter.next().value); // 1
 console.log(counter.next().value); // 2
+
+
+
+
+
+// generators.js
+
+function* numberGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = numberGenerator();
+
+console.log(gen.next()); // { value: 1, done: false }
+console.log(gen.next()); // { value: 2, done: false }
+console.log(gen.next()); // { value: 3, done: false }
+console.log(gen.next()); // { value: undefined, done: true }
+
+// Example use case: Infinite sequence
+function* infiniteCounter() {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
+
+const counter = infiniteCounter();
+console.log(counter.next().value); // 0
+console.log(counter.next().value); // 1
+console.log(counter.next().value); // 2
